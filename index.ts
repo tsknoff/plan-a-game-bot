@@ -54,34 +54,12 @@ const startBot = async () => {
           .sendMessage(
             chatId,
             `Какое время вас интересует?`,
-            hoursKeyboard(messageId)
+            hoursKeyboard(String(messageId))
           )
           .then((msg) => {
             planGame.addMessage(String(msg.message_id), String(chatId), "look");
           });
       }
-      // if (text === "/test") {
-      //   console.log("chatId=>", String(chatId));
-      //   return bot.sendMessage(chatId, `test`).then((msg) => {
-      //     console.log("msg.message_id=>", msg.message_id);
-      //     planGame.addMessage(String(msg.message_id), String(chatId), "test");
-      //   });
-      // }
-      // if (text === "/edit") {
-      //   console.log("chatId=>", String(chatId));
-      //   const lastBotMessage = await planGame.getLastMessageIdByAction(
-      //     String(chatId),
-      //     "test"
-      //   );
-      //   const lastBotMessageId = lastBotMessage.getDataValue("message_id");
-      //
-      //   if (lastBotMessageId) {
-      //     return bot.editMessageText(`Измененный текст`, {
-      //       chat_id: chatId,
-      //       message_id: Number(lastBotMessageId),
-      //     });
-      //   }
-      // }
     } catch (e) {
       return bot.sendMessage(chatId, "Произошла какая то ошибка");
     }

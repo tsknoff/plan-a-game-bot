@@ -1,6 +1,4 @@
-import { mappedList } from "./interfaces";
-
-export const hoursKeyboard = (messageId) => {
+export const hoursKeyboard = (messageId: string) => {
   return {
     reply_markup: {
       inline_keyboard: [
@@ -68,7 +66,6 @@ export const hoursKeyboard = (messageId) => {
     },
   };
 };
-
 export const lobbyKeyboard = (
   hourToBook: string,
   users: {
@@ -103,67 +100,3 @@ export const lobbyKeyboard = (
     inline_keyboard: buttons,
   };
 };
-
-export const exampleMessageObj = {
-  message_id: 177,
-  from: {
-    id: 152316348,
-    is_bot: false,
-    first_name: "Egor",
-    last_name: "Tsukanov",
-    username: "tsukanov",
-    language_code: "ru",
-  },
-  chat: {
-    id: 152316348,
-    first_name: "Egor",
-    last_name: "Tsukanov",
-    username: "tsukanov",
-    type: "private",
-  },
-  date: 1699084741,
-  text: "/info",
-  entities: [{ offset: 0, length: 5, type: "bot_command" }],
-};
-
-// const ReservationExample = {
-//   dataValues: {
-//     reservation_id: 1,
-//       chat_id: '152316348',
-//       user_id: '152316348',
-//       start_time: '12:00',
-//       createdAt: 2023-11-06T13:56:39.960Z,
-//       updatedAt: 2023-11-06T13:56:39.960Z,
-//       User: [User]
-//   },
-//   _previousDataValues: {
-//     reservation_id: 1,
-//       chat_id: '152316348',
-//       user_id: '152316348',
-//       start_time: '12:00',
-//       createdAt: 2023-11-06T13:56:39.960Z,
-//       updatedAt: 2023-11-06T13:56:39.960Z,
-//       User: [User]
-//   },
-//   uniqno: 1,
-//     _changed: Set(0) {},
-//   _options: {
-//     isNewRecord: false,
-//       _schema: null,
-//       _schemaDelimiter: '',
-//       include: [Array],
-//       includeNames: [Array],
-//       includeMap: [Object],
-//       includeValidated: true,
-//       attributes: [Array],
-//       raw: true
-//   },
-//   isNewRecord: false,
-//     User: User {
-//     dataValues: [Object],
-//       _previousDataValues: [Object],
-//       uniqno: 1,
-//       _changed: Set(0) {},
-//     _options: [Object],
-//       isNewRecord: false
-//   }
