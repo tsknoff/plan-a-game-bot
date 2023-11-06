@@ -4,15 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev": "nodemon --exec ts-node index.ts",
+    "start": "ts-node index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "node-telegram-bot-api": "^0.64.0",
     "nodemon": "^3.0.1",
-    "prettier": "^3.0.3"
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "prettier": "^3.0.3",
+    "sequelize": "^6.34.0"
+  },
+  "devDependencies": {
+    "@types/node-telegram-bot-api": "^0.63.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   }
 }
