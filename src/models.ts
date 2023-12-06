@@ -23,6 +23,7 @@ export type ReservationAttributes = {
   user_id: string;
   start_time: string;
 };
+
 export const Reservation = sequelize.define("Reservation", {
   reservation_id: {
     type: DataTypes.INTEGER,
@@ -48,6 +49,5 @@ export const BotMessages = sequelize.define("BotMessages", {
   action: DataTypes.STRING,
 });
 
-// Определяем связи между моделями
 User.hasMany(Reservation, { foreignKey: "user_id" });
 Reservation.belongsTo(User, { foreignKey: "user_id" });
